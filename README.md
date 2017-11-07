@@ -94,7 +94,13 @@ Ejecución
 
         http://localhost:8000/prestamos/
 
-5. Desactivar el entorno virtual
+5. Para entrar al **Log in** se debe crear un superusuario de Django, usar el siguiente comando:
+
+        $ python manage.py createsuperuser
+
+    Ahora podra ingresar al "Log in" ingresando el usuario y contraseña que uso para crear al superusuario de Django.
+
+6. Desactivar el entorno virtual
 
         $ deactivate
 
