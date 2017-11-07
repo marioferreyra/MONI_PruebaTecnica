@@ -1,0 +1,48 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+Lista de prestamos
+{% endblock %}
+
+{% block content %}
+<br>
+<a class="btn btn-danger" href="{% url 'prestamos:logout_admin' %}">Log out</a>
+<br>
+<br>
+<table class="table table-bordered" align="center">
+    <thead>
+        <tr align="center">
+            <td>#</td>
+            <td>DNI</td>
+            <td>Nombre</td>
+            <td>Apellido</td>
+            <td>Genero</td>
+            <td>E-mail</td>
+            <td>Monto ($)</td>
+            <td>Opciones</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% if prestamos %}
+        {% for prestamo in prestamos %}
+        <tr align="center">
+            <td>{{ prestamo.id }}</td>
+            <td>{{ prestamo.dni }}</td>
+            <td>{{ prestamo.nombre }}</td>
+            <td>{{ prestamo.apellido }}</td>
+            <td>{{ prestamo.genero }}</td>
+            <td>{{ prestamo.email }}</td>
+            <td>{{ prestamo.monto }}</td>
+            <td>
+                <a class="btn btn-primary" href="{% url 'prestamos:editar_prestamo' prestamo.id %}">Editar</a>
+                <a class="btn btn-danger" href="{% url 'prestamos:eliminar_prestamo' prestamo.id %}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+        {% else %}
+        <h1>No hay registros de prestamos</h1>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock%}

@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+Formulario de prestamos
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <br>
+    <button class="btn btn-success" type="submit">Pedir Prestamos</button>
+    <br>
+</form>
+{% endblock %}

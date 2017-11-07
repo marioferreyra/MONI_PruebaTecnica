@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+Bienvenido
+{% endblock %}
+
+{% block content %}
+<br>
+<a href="{% url 'prestamos:login_admin' %}" class="btn btn-primary btn-lg btn-block">Log in</a>
+<br>
+<a href="{% url 'prestamos:nuevo_prestamo' %}" class="btn btn-primary btn-lg btn-block">Solicitar Prestamo</a>
+<br>
+{% endblock%}

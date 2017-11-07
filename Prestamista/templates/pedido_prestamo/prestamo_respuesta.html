@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+Respuesta a prestamo
+{% endblock %}
+
+{% block content %}
+
+{% if contexto.is_solicitud_error %}
+<h1>### ERROR ###</h1>
+<h3>Ocurrio un error durante pedido del préstamo</h3>
+
+{% else %}
+
+    {% if contexto.is_solicitud_approved %}
+    <h1>Señor '{{ contexto.user_nombre }} {{contexto.user_apellido}}', su solitud de prestamo por '$ {{ contexto.user_monto }}' fue APROBADA</h1>
+    <h3>Le mostramos sus datos:</h3>
+    <h3>    * DNI: {{ contexto.user_dni }}</h3>
+    <h3>    * Genero: {{ contexto.user_genero }}</h3>
+    <h3>    * E-mail: {{ contexto.user_email }}</h3>
+
+    {% else %}
+    <h1>Señor '{{ contexto.user_nombre }} {{contexto.user_apellido}}' su solitud de prestamo por '$ {{ contexto.user_monto }}' fue DENEGADA</h1>
+
+    {% endif %}
+
+{% endif %}
+
+<br>
+<a class="btn btn-primary" href="{% url 'prestamos:nuevo_prestamo' %}">Nuevo Prestamo</a>
+<br>
+{% endblock %}

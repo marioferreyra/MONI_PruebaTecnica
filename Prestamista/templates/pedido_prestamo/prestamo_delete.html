@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+Eliminar prestamo
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <h3>¿Desea eliminar el registro de prestamo de '{{ prestamo.nombre }} {{ prestamo.apellido }}'?</h3>
+    <button class="btn btn-danger" type="submit">Sí, eliminar</button>
+    <br>
+    <br>
+    <a class="btn btn-primary" href="{% url 'prestamos:listar_prestamos' %}">Cancelar</a>
+</form>
+{% endblock %}
