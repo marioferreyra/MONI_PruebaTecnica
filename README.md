@@ -78,6 +78,7 @@ Ejecución
 
 2. Generar y llenar la base de datos:
 
+        $ cd Prestamista
         $ python manage.py migrate
 
 
