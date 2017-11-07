@@ -85,7 +85,7 @@ Ejecución
 
         $ python manage.py runserver
 
-4. Luego en el navegador podras acceder a FotoLink:
+4. Luego en el navegador acceder a la pagina web:
 
         http://127.0.0.1:8000/prestamos/
 
