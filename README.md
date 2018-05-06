@@ -54,11 +54,14 @@ Instalación
 
     Y luego agregando la siguiente línea al final del archivo `.bashrc`:
 
+        export WORKON_HOME=$HOME/.virtualenvs
+        export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+        export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
         [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"
 
     Para crear y activar nuestro virtualenv:
 
-        $ mkvirtualenv --system-site-packages --python=/usr/bin/python3 moni
+        $ mkvirtualenv --python=/usr/bin/python3 moni
 
 3.  Bajar el código:
 
@@ -89,9 +92,7 @@ Ejecución
 4. Luego en el navegador acceder a la pagina web:
 
         http://127.0.0.1:8000/prestamos/
-
         ó
-
         http://localhost:8000/prestamos/
 
 5. Para entrar al **Log in** se debe crear un superusuario de Django, usar el siguiente comando:
